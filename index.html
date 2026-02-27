@@ -291,8 +291,8 @@
 <div class="container">
   <div class="header">
     <img class="bird-icon" src="logo-bird-color.png" alt="Finch logo" />
-    <h1>Pantry Suggestions</h1>
-    <p class="subtitle">Help us stock the office with what you actually want!</p>
+    <h1 id="main-heading">Pantry Suggestions</h1>
+    <p class="subtitle" id="main-subtitle">Help us stock the office with what you actually want!</p>
   </div>
 
   <div class="toggle-row">
@@ -377,6 +377,13 @@
     document.querySelectorAll('.toggle-btn').forEach((b, i) => {
       b.classList.toggle('active', panels[i] === group);
     });
+    if (group === 'meals') {
+      document.getElementById('main-heading').textContent = 'Meal Feedback';
+      document.getElementById('main-subtitle').textContent = 'Help us make sure we\'re choosing the right restaurants.';
+    } else {
+      document.getElementById('main-heading').textContent = 'Pantry Feedback';
+      document.getElementById('main-subtitle').textContent = 'Help us stock the office with what you actually want';
+    }
   }
 
   function addRow(listId, placeholder) {
